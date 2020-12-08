@@ -1,3 +1,10 @@
+## Ryan Lim's Personal Website
+
+This is my personal website, it was built by someone else. Information on how to support them is below. 
+
+
+
+
 <div align="center">
   <br>
   <img src="/images/reverie-text.png" alt="Reverie" width="200"/>
