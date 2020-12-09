@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "xlim, ylim, and boxplots"
-categories: R, programming
+categories: R programming
 ---
 
 The R library ggplot2 is my favourite tool for data visualization. Usually I go on and on about how intuitive ggplot is, but today I learned of one of the most unintuitive things about ggplot2. Apparently, changing the limits of a plot using xlim, ylim, or scale_\* will change the underlying computation of the plot. 
