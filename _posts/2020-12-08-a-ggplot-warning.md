@@ -13,4 +13,5 @@ There's nothing wrong with this behaviour, but it just surpises me that:
 1. The default way of calculating limits removes points before plotting. Intuitively if I wanted to restrict the calculation of the plot, I would restrict the data, not the plot. 
 
 2. For some reason or another, the proper way of setting limits on a plot *without* dropping points is called "coord_cartesian". Why the hell is it called that? 
-Anyway, I googled around, and with the keywords "xlim, ylim, boxplot median" I didn't see any immediate results so I decided to write this. 
+
+Anyway, I googled around, and with the keywords "xlim, ylim, boxplot median" I didn't see any immediate results so I decided to write this. Still love ggplot, still love R. 
