@@ -18,7 +18,7 @@ while this does:
 
 with some extra spacing, you can see that each single quote in sed has an closing, escaped quote, and reopening quote:
 
-`bash -c 'echo "Hello, World" | sed ' \' 's/, World/, Earth!/ ' \' ' `
+`bash -c 'echo "Hello, World" | sed ' \' 's/, World/, Earth!/' \' ' '`
 
 Hopefully this makes it less confusing for anyone reading
 
