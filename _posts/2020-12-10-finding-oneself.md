@@ -3,7 +3,7 @@ layout: post
 title: "'Find'-ing oneself pt 1: Finding the Last File"
 categories: Bash
 ---
-I love find. Neuroimaging has this compulsive need to put everything into separate files and folders, turning the folder system into a makeshift database (see: BIDS). This can make even the simplest tasks turn into nightmares of `cd`ing and `ls`ing in and out of directories to try and get anything done. 
+I love `find`. Neuroimaging has this compulsive need to put everything into separate files and folders, turning the folder system into a makeshift database (see: BIDS). This can make even the simplest tasks turn into nightmares of `cd`-ing and `ls`-ing in and out of directories to try and get anything done. 
 
 This is where `find` comes in. A single line command with a billion flags that can do almost anything. This probably won't be the last post on find, so let's say this is part 1. 
 
@@ -13,6 +13,7 @@ I had the following problem today: Find the last folder created or modified exac
 For example, in the following diagram I would want the last folder modified at level "C":
 
 `A|-> B -> C -> D
+
   |-> B -> C -> D `
 
 
@@ -47,7 +48,7 @@ We want to sort the entire file structure, then isolate the last file. We'll use
 
 `find . -mindepth 3 -maxdepth 3 -printf "%TY-%Tm-%Td %TH:%TM:%TS %p\n" | sort | tail -n 1 # The -n 1 says I only want the last file`
 
-If you're wondering what the "|" is doing in the command, I'd suggest googling the "pipe" operator in Bash. It's worth learning about if you're spending any time on the command line. 
+If you're wondering what the \"\|\" is doing in the command, I'd suggest googling the "pipe" operator in Bash. It's worth learning about if you're spending any time on the command line. 
 
 The output of the above command gives us a single file, we're almost done!
 `2020-12-10 18:35:31.7068330430 ./.cache/gnome-bool/research/` 
