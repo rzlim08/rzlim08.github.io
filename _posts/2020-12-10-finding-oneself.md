@@ -12,9 +12,9 @@ This is where `find` comes in. A single line command with a billion flags that c
 I had the following problem today: Find the last folder created or modified exactly 2 subfolders below the current directory.
 For example, in the following diagram I would want the last folder modified at level "C":
 
-`A|-> B -> C -> D
+`A\|-> B -> C -> D
 
-  |-> B -> C -> D `
+  \|-> B -> C -> D `
 
 
 ## Listing the directories
@@ -39,7 +39,9 @@ Note the `%p \n ` at the end there. This tells us we want to print the filename 
 ## Sorting 
 
 Ok, so we end up with something like 
+
 `2020-12-10 18:31:31.7068330430 ./.cache/gnomes/shell-extensions`
+
 `2020-12-10 18:31:49.8657847770 ./.cache/gnome-software/bleh` 
 
 What can we do with it? The nice thing about bash is that we can pipe the outputs to other commands, so `find` doesn't have to do ALL the heavy lifting for us. 
@@ -51,6 +53,7 @@ We want to sort the entire file structure, then isolate the last file. We'll use
 If you're wondering what the \"\|\" is doing in the command, I'd suggest googling the "pipe" operator in Bash. It's worth learning about if you're spending any time on the command line. 
 
 The output of the above command gives us a single file, we're almost done!
+
 `2020-12-10 18:35:31.7068330430 ./.cache/gnome-bool/research/` 
 
 
