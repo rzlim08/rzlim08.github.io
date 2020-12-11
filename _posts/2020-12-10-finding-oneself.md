@@ -10,11 +10,6 @@ This is where `find` comes in. A single line command with a billion flags that c
 ## Finding the last file
 
 I had the following problem today: Find the last folder created or modified exactly 2 subfolders below the current directory.
-For example, in the following diagram I would want the last folder modified at level "C":
-
-`A\|-> B -> C -> D
-
-  \|-> B -> C -> D `
 
 
 ## Listing the directories
