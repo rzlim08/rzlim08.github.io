@@ -5,7 +5,7 @@ categories: Miscellaneous
 ---
 First things first, I want to give proper credit, a lot of the code in this tutorial was derived from "https://medium.com/samsung-internet-dev/building-an-internet-connected-phone-with-peerjs-775bd6ffebec". I found it still a bit complex as a first introduction to peerjs, so I made this tutorial to hopefully be a bit of a softer first step for people who (like me) aren't well versed in javascript or PeerJS. It actually ended up being fairly simple, and it's amazing how much WebRTC and PeerJS can do. 
 
-## The Boring Parts: Setup and the PeerJS Server
+## The Boring Parts: Setup & PeerJS Server
 I'll try and get the boring parts out of the way first. Installing the NPM packages and running the server can be tricky, but are more or less formulaic. To install the packages run `npm init` and respond to the command prompts. I usually just use all the defaults, but if you're making a real project, you should give it some thought. 
 
 Then run:
@@ -34,7 +34,7 @@ Which starts the server.
 
 
 ### The Second Way:
-The other way to run the peerjs server is manually writing the server using an ExpressPeerServer. Writing the following code will run a server at port 8000. 
+The other way to run the peerjs server is manually writing the server using an ExpressPeerServer. Writing the following code will run a server at port 8000. We'll be using this way of running Server when we write the client. 
 ```
 const express = require("express");
 const http = require('http');
@@ -66,5 +66,36 @@ Running the server is as easy as:
 ```
 node server.js
 ```
+## The Fun Part: The Client
 
+First lets write some html to read in the peerjs javascript file and give our webpage a little bit of structure. Below, the line that begins with `<script src=` reads in peerjs. 
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="index.css">
+    <!-- import the peer javascript file -->
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+</head>
+<body>
+    <div class="chatPage">
+        <div class="statuses">
+            <p id="caststatus" class="big">
+                The peerjs id is ???
+            </p> <p id="connectedStatus"></p>
+            <br />
+        </div>
+        <input type="text" id="myText"><input type="submit" value="Submit" onclick="connectToPeer()">
+        <div id="chatArea">
+        </div>
+        <textarea id="chatSend" rows="4" cols="80"></textarea>
+        <input type="submit" value="Send" onclick="sendChat()">
+    </div>
+</body>
+</html>
+```
 
