@@ -98,4 +98,23 @@ First lets write some html to read in the peerjs javascript file and give our we
 </body>
 </html>
 ```
+Open localhost:8000 (or whatever port you used on your server) and you should be able to see the rendering of the app. Most of the components won't work yet, and you won't have connected to the server yet. However connecting to the server is easy. In the `head` tags, after peerjs is imported, add the following:
+```
+<script> 
+const peer = new Peer(''+Math.floor(Math.random()*2**18).toString(36).padStart(4,0), {
+  host: location.hostname, // Right now just using localhost
+  port:8000, // Using the port of our server
+  debug: 1,
+  path: '/myapp' // We set this when we made the server
+});
+window.peer = peer;
+peer.on('open', function () {
+    window.caststatus.textContent = `Your device ID is: ${peer.id}`;
+});
+</script>
+
+```
+Once you open your localhost:8000 page, instead of seeing: `The peerjs id is ???` at the top, it should be `Your device ID is: <id>`
+
+This tells you that you've successfully created an ID and connected to the server. 
 
