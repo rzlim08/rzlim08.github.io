@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "PeerJS tutorial: A simple chat app"
-categories: Miscellaneous
+categories: javascript peerjs
 ---
 First things first, I want to give proper credit, a lot of the code in this tutorial was derived from "https://medium.com/samsung-internet-dev/building-an-internet-connected-phone-with-peerjs-775bd6ffebec". I found it still a bit complex as a first introduction to peerjs, so I made this tutorial to hopefully be a bit of a softer first step for people who (like me) aren't well versed in javascript or PeerJS. It actually ended up being fairly simple, and it's amazing how much WebRTC and PeerJS can do. 
 
