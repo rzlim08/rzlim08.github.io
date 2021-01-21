@@ -89,11 +89,11 @@ First lets write some html to read in the peerjs javascript file and give our we
             </p> <p id="connectedStatus"></p>
             <br />
         </div>
-        <input type="text" id="myText"><input type="submit" value="Submit" onclick="connectToPeer()">
+        <input type="text" id="myText"><input class="conn-btn" type="submit" value="Submit" onclick="connectToPeer()">
         <div id="chatArea">
         </div>
         <textarea id="chatSend" rows="4" cols="80"></textarea>
-        <input type="submit" value="Send" onclick="sendChat()">
+        <input id="sendMessage" type="submit" value="Send" onclick="sendChat()">
     </div>
 </body>
 </html>
